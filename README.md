@@ -1,6 +1,6 @@
-# CST475-Big-Data-Analysis
-### This is a repository of my lab submissions for CST475
-- Class:  CST475 Big-Data Analysis
+# CST 475 Big-Data Analysis
+### This is a repository of my lab submissions for CST 475 at Oregon Tech
+- Class:  CST 475 Big-Data Analysis
 - Prof:   Dr. Cecily Heiner
 - Year:   2022
 - Term:   Spring
