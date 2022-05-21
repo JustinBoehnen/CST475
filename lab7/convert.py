@@ -15,10 +15,9 @@ def convert(src_name, dest_name):
     i = 0
     for row in reader:
         i += 1
-        print(f"\r{round((i/10000)*100,2):.2f}", end="%")
+        print(f"\rrow: {i}", end="")
         writer.writerow([i, row[-3]])
     src.close()
     dest.close()
 
-
-convert("data.csv", "lab7.csv")
+convert(input("input: "), input("output: "))

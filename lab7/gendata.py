@@ -85,7 +85,7 @@ def screenshot(x, y, width, height, threshold=-1, reduction_factor=1):
     return img
 
 # reads the score of the game, will not return until reads a valid score
-def get_score():
+def get_score(old_score):
     got = False
     while not got:
 
@@ -98,7 +98,7 @@ def get_score():
 
         score = re.sub("[^0-9]", "", score)
 
-        if score != "":
+        if score != "" and int(score) >= old_score:
             score = int(score)
             return score
 
@@ -154,7 +154,7 @@ def collect_data(data_points, output_file, time_gap=1, verbose=True, delete_file
             old_score = score
 
             time.sleep(time_gap)
-            score = get_score()
+            score = get_score(old_score)
 
             data = np.append(data, [direction, old_score, score, score - old_score])
             np.savetxt(_f, [data], fmt="%5d", delimiter=",")
